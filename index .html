@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja" translate="no">
+<head>
+<meta charset="utf-8">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="ver" content="d448c85a">
+<title>アンケート</title>
+<style>
+:root{--bg:#f6f8fb;--bgb:#fbf6ef;--fg:#1d2530;--card:#fff;--line:#b9c3d0;--acc:#2456c9;--on:#fff;--x:#2f6fd0;--xs:#e6efff;--y:#c8590f;--ys:#fff0e3;--m:#e9ecf1}
+@media(prefers-color-scheme:dark){:root{--bg:#141a22;--bgb:#1d1913;--fg:#e8edf3;--card:#1f2833;--line:#4a5666;--acc:#8ab0ff;--on:#0b1220;--x:#8ab4ff;--xs:#1b2c4d;--y:#ffa86b;--ys:#4a2c14;--m:#2a323d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 system-ui,"Hiragino Sans","Noto Sans JP",sans-serif;touch-action:manipulation}
+body.b{background:var(--bgb)}
+#pg{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding:6px 12px;font-size:14px}
+#pg i{display:block;height:6px;margin-top:4px;background:var(--m);border-radius:3px}
+#pg b{display:block;height:100%;background:var(--acc);border-radius:3px;transition:width .3s}
+main{max-width:560px;margin:0 auto;padding:16px}
+.s{animation:in .2s ease-out}
+@keyframes in{from{transform:translateX(24px);opacity:0}to{transform:none;opacity:1}}
+.bb{padding:10px 14px;border-radius:14px;margin:8px 0;max-width:92%;animation:in .2s ease-out both}
+.me{background:var(--m);margin-right:auto}
+.ai{background:var(--card);border:2px solid var(--acc);margin-left:auto;font-size:18px;font-weight:600;animation-delay:.15s}
+.rg{display:flex;flex-direction:column;gap:8px;margin:8px 0 16px}
+.rg button,.bt{min-height:48px;border:2px solid var(--line);border-radius:12px;background:var(--card);color:var(--fg);font:inherit;padding:8px 12px;text-align:left;transition:transform .08s}
+.rg button:active,.bt:active{transform:scale(.97)}
+.rg .x{background:var(--xs)}.rg .y{background:var(--ys)}
+.rg .nei{margin-top:12px;min-height:44px;font-size:15px}
+.rg button[aria-checked=true]{border-color:var(--acc);background:var(--acc);color:var(--on)}
+.bt.p{width:100%;text-align:center;background:var(--acc);color:var(--on);border-color:var(--acc);margin-top:8px}
+.bt:disabled{opacity:.4}
+.bt.g{border:none;background:none;text-decoration:underline;min-height:40px;margin-top:8px}
+.cd{border:2px solid;border-radius:12px;padding:4px 12px;margin:8px 0}
+.cX{border-color:var(--x);background:var(--xs)}.cY{border-color:var(--y);background:var(--ys)}
+.tg{background:var(--acc);color:var(--on);border-radius:8px;padding:0 8px;font-size:14px;margin-left:6px}
+.sm{font-size:14px;opacity:.85}
+.cb{display:flex;gap:10px;align-items:center;margin:12px 0}.cb input{width:24px;height:24px}
+textarea{width:100%;font:inherit;padding:8px;border-radius:8px;border:2px solid var(--line);background:var(--card);color:var(--fg)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="pg"></div>
+<main id="app"></main>
+<script type="application/json" id="items">{"version":"v6","minutes":8,"partA":{"practice":[{"id":"PA1","input":"レポートの締め切りに間に合いそうにないんです。","reply":"なぜって？"}],"items":[{"id":"A01","input":"最近、朝早く起きるようにしているんです。","reply":"それはいいですね。"},{"id":"A02","input":"最近、自炊を始めてみたんです。","reply":"へえ、そうなんだ！"},{"id":"A03","input":"夜中にラーメンを食べちゃった。","reply":"やべー、また夜食いした。"},{"id":"A05","input":"友人と久しぶりに連絡を取りました。","reply":"それは良かったですね！"},{"id":"A08","input":"最近ずっと寝不足でさ。","reply":"俺もだよ。"},{"id":"A10","input":"昨日、映画を三本続けて観たんだ。","reply":"えっ！？"},{"id":"A14","input":"新しいクラスになじめるか心配です。","reply":"大丈夫、みんなすぐに仲良しになるわよ。"},{"id":"A15","input":"今朝は電車がすごく混んでいました。","reply":"今朝も電車がすごく混んでました。"},{"id":"A16","input":"昨日は一日中なにもしないで終わった。","reply":"私は昨日一日中忙しかった。"},{"id":"A20","input":"小さなことでも、すぐ不安になってしまうんです。","reply":"私もあるある！すぐに悪い方に考えちゃうんだよね。"},{"id":"A22","input":"上司にほめられて、少しうれしかったです。","reply":"そう言ってもらえると嬉しいですね。"},{"id":"A23","input":"テスト勉強、全然進んでないんだよね。","reply":"僕もだよ。"}],"check":{"id":"CK1","input":"（確認のための問いです）","reply":"この問いでは、くだけ具合は「4」、自然さは「2」を選んでください。","want":{"casual":4,"natural":2}}},"partB":{"practice":[{"id":"PB1","pair":"P1","input":"辛い料理が少し苦手なんです。","reply":"【仮】辛いのは苦手なんだ。無理しなくていいよ。"}],"pairs":[{"id":"P1","persons":[{"key":"p1m","traits":["自分のことを「俺」と言う","語尾：「〜よ」「〜だよな」「〜んだよ」","「〜さ」をよく使い、「です」「ます」はあまり使わない"],"examples":["多分、これでダメなら俺もダメだなって思ったからさ。","俺、前にアイツに言ったことあんだよな。"]},{"key":"p1n","traits":["自分のことを「僕」と言う","語尾：「〜ますね」「〜ですね」「〜ですけどね」","「ね」をよく使い、「だ」「じゃ」はあまり使わない"],"examples":["そうですね、どうしましょうね。","恥ずかしいですけど外見で決めてるところありますね、やっぱり。"]}],"items":[{"id":"B04","input":"最近、ギターを習い始めました。","reply":"【仮】B04 の返事（あとで差し替え）"},{"id":"B10","input":"最近、ギターを習い始めました。","reply":"【仮】B10 の返事（あとで差し替え）"},{"id":"B12","input":"最近、ギターを習い始めました。","reply":"【仮】B12 の返事（あとで差し替え）"},{"id":"B05","input":"友達の誕生日に何を贈ろうか迷っています。","reply":"【仮】B05 の返事（あとで差し替え）"},{"id":"B07","input":"友達の誕生日に何を贈ろうか迷っています。","reply":"【仮】B07 の返事（あとで差し替え）"},{"id":"B09","input":"友達の誕生日に何を贈ろうか迷っています。","reply":"【仮】B09 の返事（あとで差し替え）"}]},{"id":"P2","persons":[{"key":"p2m","traits":["自分のことを「私」と言う","語尾：「〜ですね」「〜ますね」「〜ので」「〜てます」","「〜って」をよく使い、「よ」はあまり使わない"],"examples":["やっぱり、そういう好きなことをさせてもらえるっていうところを、重視しています。","私はそんなに嫉妬とか、嫉妬心っていうのがよく分からなくて。"]},{"key":"p2n","traits":["自分のことを「私」と言う","語尾：「〜な」「〜ね」「〜んだよ」（「ですね」「ます」も使う）","短く言い切る。「だ」「じゃ」はあまり使わない"],"examples":["私がいつも頼むのはこのシュリンプとガーリックバター。","あの私でも稼ぐから。"]}],"items":[{"id":"B01","input":"家で植物を育てるのにはまっています。","reply":"【仮】B01 の返事（あとで差し替え）"},{"id":"B06","input":"家で植物を育てるのにはまっています。","reply":"【仮】B06 の返事（あとで差し替え）"},{"id":"B11","input":"家で植物を育てるのにはまっています。","reply":"【仮】B11 の返事（あとで差し替え）"},{"id":"B02","input":"近所に大きな公園ができたんだよ。","reply":"【仮】B02 の返事（あとで差し替え）"},{"id":"B03","input":"近所に大きな公園ができたんだよ。","reply":"【仮】B03 の返事（あとで差し替え）"},{"id":"B08","input":"近所に大きな公園ができたんだよ。","reply":"【仮】B08 の返事（あとで差し替え）"}]}]}}</script>
+<script>
+(function(){
+'use strict';
+var D=JSON.parse(document.getElementById('items').textContent);
+var VER=document.querySelector('meta[name=ver]').content;
+var R=location.hash.slice(1);
+var app=document.getElementById('app'),pg=document.getElementById('pg');
+// 記号がない・不正なときは止める
+if(R.length!==1||'abcdt'.indexOf(R)<0){app.textContent='このリンクは使えません。送られてきたリンクを、もう一度そのまま開いてください。';return;}
+
+// ---- 種から再現できる乱数（xmur3 + mulberry32）----
+function xmur3(s){for(var i=0,h=1779033703^s.length;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=h<<13|h>>>19}return function(){h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return(h^=h>>>16)>>>0}}
+function mb(a){return function(){a|=0;a=a+1831565813|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+var rnd=mb(xmur3(VER+':'+R)());
+function shuf(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(rnd()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+// 同じ input が連続しないように並べる
+function spread(a){var b;for(var k=0;k<200;k++){b=shuf(a);var ok=true;for(var i=1;i<b.length;i++)if(b[i].input===b[i-1].input)ok=false;if(ok)break}return b}
+
+// ---- 画面の並び（順番・X/Y 割り当てを決める）----
+var seq=[{t:'intro'},{t:'aexp'}],o=0,XI={};
+D.partB.pairs.forEach(function(p){XI[p.id]=rnd()<0.5?0:1});
+function Q(pt,it,pr,p){var s={t:'q',pt:pt,it:it,pr:pr,p:p};if(p)s.xi=XI[p.id];if(!pr)s.o=++o;seq.push(s)}
+var A=shuf(D.partA.items);A.splice(Math.round(A.length*(0.45+rnd()*0.2)),0,D.partA.check);
+Q('A',D.partA.practice[0],1);A.forEach(function(it){Q('A',it)});
+seq.push({t:'mid'});
+shuf(D.partB.pairs).forEach(function(p,k){
+  seq.push({t:'demo',p:p,xi:XI[p.id],n:k+1});
+  if(!k)Q('B',D.partB.practice[0],1,p);
+  spread(p.items).forEach(function(it){Q('B',it,0,p)});
+});
+seq.push({t:'last'});
+var NQ=seq.filter(function(s){return s.t==='q'}).length;
+
+// ---- 状態の保存（localStorage が使えなくても進める）----
+var KEY='pai6:'+VER+':'+R,had=false;
+var S={i:0,ans:{},rs:0,rz:0,free:'',code:null,st:new Date().toISOString()};
+try{var sv=localStorage.getItem(KEY);if(sv){S=JSON.parse(sv);had=true}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+
+// ---- 回答時間（タブが裏にある間は数えない）----
+var tm={a:0,l:performance.now()};
+function sec(){return Math.min(600,tm.a+(tm.l?(performance.now()-tm.l)/1000:0))}
+function t0(){tm.a=0;tm.l=performance.now()}
+document.addEventListener('visibilitychange',function(){if(document.hidden){tm.a+=tm.l?(performance.now()-tm.l)/1000:0;tm.l=null}else tm.l=performance.now()});
+
+// ---- 部品（文面は必ず textContent で入れる）----
+function h(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function ap(p){for(var i=1;i<arguments.length;i++)if(arguments[i])p.appendChild(arguments[i]);return p}
+function btn(x,c,fn){var b=h('button','bt '+(c||''),x);b.type='button';b.onclick=fn;return b}
+function ttl(ic,x){var e=h('h2');var s=h('span',null,ic+' ');s.setAttribute('aria-hidden','true');e.appendChild(s);if(x)e.appendChild(document.createTextNode(x));return e}
+function buzz(){try{navigator.vibrate&&navigator.vibrate(10)}catch(e){}}
+function show(nodes,bg){app.innerHTML='';var s=h('div','s');nodes.forEach(function(n){s.appendChild(n)});app.appendChild(s);document.body.className=bg?'b':'';progress();scrollTo(0,0)}
+function progress(){
+  var d=0;for(var i=0;i<S.i&&i<seq.length;i++)if(seq[i].t==='q')d++;
+  var left=NQ-d;pg.innerHTML='';
+  pg.appendChild(h('span',null,d+' / '+NQ+'　あと '+left+' 問・約 '+(left?Math.max(1,Math.ceil(left*D.minutes/NQ)):0)+' 分'));
+  var i2=h('i'),b=h('b');b.style.width=(100*d/NQ)+'%';i2.appendChild(b);pg.appendChild(i2);
+}
+function rg(it,cur,fn,num){
+  var g=h('div','rg'),bs=[];g.setAttribute('role','radiogroup');
+  it.forEach(function(x){
+    var b=h('button',x.c||'',(num?x.v+'　':'')+x.l);b.type='button';b.setAttribute('role','radio');b.setAttribute('aria-checked',cur===x.v?'true':'false');
+    b.onclick=function(){bs.forEach(function(o){o.setAttribute('aria-checked','false')});b.setAttribute('aria-checked','true');buzz();fn(x.v)};
+    bs.push(b);g.appendChild(b);
+  });
+  return g;
+}
+function go(){S.i++;save();render()}
+function txt(icon,t,ps,bl,fn,extra,bg){
+  var n=[ttl(icon,t)];ps.forEach(function(p){n.push(h('p',null,p))});if(extra)n.push(extra);
+  var b=btn(bl,'p',fn);n.push(b);show(n,bg);return b;
+}
+
+// ---- 各画面 ----
+function scrIntro(){
+  var lb=h('label','cb'),cb=h('input');cb.type='checkbox';ap(lb,cb,h('span',null,'内容を読み、協力することに同意します'));
+  var b=txt('🌱','AI の返事の「話し方」についてのアンケート',[
+    '卒業研究のためのアンケートです。AI が作った短い返事を読んで、感じたとおりに答えてください。正解はありません。',
+    '全部で '+NQ+' 問、'+D.minutes+' 分ほどです。途中で閉じても、同じリンクを開けば続きから再開できます。',
+    '名前・年齢・連絡先は記録しません。回答は記号（A さん・B さんなど）で管理し、研究以外には使いません。',
+    '途中でやめても、不利益はありません。'],'はじめる',go,lb);
+  b.disabled=true;cb.onchange=function(){b.disabled=!cb.checked};
+}
+function scrAexp(){txt('🌱','前半：話し方の「くだけ具合」',[
+  '「相手」の言葉に、AI が返事をしています。\nAI の返事を読んで、2 つのことを 5 段階で答えてください。',
+  '① 話し方は、どのくらいくだけているか（丁寧 ↔ くだけている）\n② 日本語の会話として、自然か',
+  '内容の良し悪し（優しい・冷たいなど）ではなく、話し方で答えてください。\nまず練習を 1 問やります（練習の答えは記録しません）。'],'次へ',go);
+  app.querySelectorAll('p').forEach(function(p){p.style.whiteSpace='pre-line'});}
+function scrMid(){txt('🌿','前半おわり！ 後半は「2 人の話し方を混ぜた AI」です',[
+  '後半では、2 人の人物（X さん・Y さん）の話し方を、いろいろな割合で混ぜて作った AI の返事を読んでもらいます。\nまず 2 人の話し方の見本を見てから、返事がどちらの話し方に近いかを答えてください。\n2 人の組は 2 つあります。組ごとに X さん・Y さんは別の人です。',
+  '10 秒休んでも大丈夫です。途中で閉じても、続きから再開できます。'],'次へ',go,null,true);
+  app.querySelectorAll('p').forEach(function(p){p.style.whiteSpace='pre-line'});}
+function cards(p,xi){
+  var d=h('div');
+  [['X',xi,'cX'],['Y',1-xi,'cY']].forEach(function(r){
+    var P=p.persons[r[1]],c=h('div','cd '+r[2]),u=h('ul');
+    c.appendChild(h('h3',null,r[0]+' さん'));
+    P.traits.forEach(function(t){u.appendChild(h('li',null,t))});c.appendChild(u);
+    P.examples.forEach(function(e){c.appendChild(h('p',null,'例：「'+e+'」'))});d.appendChild(c);
+  });
+  return d;
+}
+function scrDemo(s){
+  show([ttl('🌳','組 '+s.n+' の 2 人（X さん・Y さん）'),h('p',null,'2 人の話し方の特徴です。後の問いでも、いつでも見直せます。'),cards(s.p,s.xi),btn('わかった、はじめる','p',go)],true);
+}
+var NL=['とても不自然','やや不自然','どちらともいえない','やや自然','とても自然'];
+var CL=['とても丁寧','やや丁寧','どちらともいえない','ややくだけている','とてもくだけている'];
+function opts(L,cls){return L.map(function(l,k){return{v:k+1,l:l,c:cls&&cls[k]}})}
+function scrQ(s){
+  var id=s.it.id,a=S.ans[id]||(S.ans[id]={e:0,p:0}),B=s.pt==='B';t0();
+  var hd=ttl(B?'🌳':'🌱');if(s.pr)hd.appendChild(h('span','tg','練習'));
+  var n=[hd,h('div','bb me','相手：'+s.it.input),h('div','bb ai','AI：'+s.it.reply)];
+  if(B){var pn=h('div');pn.hidden=true;pn.appendChild(cards(s.p,s.xi));
+    n.push(btn('見本をもう一度見る','g',function(){pn.hidden=!pn.hidden;if(!pn.hidden){a.p++;save()}}),pn)}
+  var nx=btn('次へ','p',function(){a.t=(a.t||0)+sec();a.nx=1;go()});
+  function chk(){nx.disabled=!(a.n&&(B?a.l!=null:a.c))}
+  function pick(k){return function(v){if(a.nx&&a[k]!==v)a.e++;a[k]=v;save();chk()}}
+  n.push(h('p','q','質問 1：'+(B?'この返事の話し方は、X さんと Y さんのどちらに近いですか？':'この返事の話し方は、どのくらいくだけていますか？')));
+  if(B){var lab=['X さんにとても近い','やや X さん寄り','ちょうど中間','やや Y さん寄り','Y さんにとても近い'],c5=['x','x','','y','y'];
+    var it=opts(lab,c5);it.push({v:0,l:'どちらにも似ていない',c:'nei'});n.push(rg(it,a.l,pick('l'),false))}
+  else n.push(rg(opts(CL),a.c,pick('c'),true));
+  n.push(h('p','q','質問 2：この返事は、日本語の会話として自然ですか？'),rg(opts(NL),a.n,pick('n'),true));
+  n.push(h('p','sm',B?'話の内容ではなく、話し方（一人称・語尾・言い回し）で比べてください':'内容の良し悪しではなく、話し方で答えてください'));
+  n.push(nx);
+  if(S.i>2)n.push(btn('もどる','g',function(){a.t=(a.t||0)+sec();S.i--;save();render()}));
+  show(n,B);chk();
+}
+function scrLast(){
+  var w=h('div'),ta=h('textarea');ta.maxLength=200;ta.rows=4;ta.value=S.free||'';ta.oninput=function(){S.free=ta.value;save()};
+  ap(w,h('p',null,'気づいたことがあれば書いてください（なくてもかまいません）。'),ta,h('p','sm','名前など、個人が分かることは書かないでください。'));
+  txt('🏁','あと少しです',[],'おわる',function(){S.free=ta.value;finish()},w,true);
+}
+function scrResume(){
+  show([h('p',null,'続きから再開しますか？'),btn('続きから','p',function(){S.rz++;save();render()}),btn('最初からやり直す','g',restart)],false);
+}
+function restart(){if(!confirm('最初からやり直しますか？'))return;S={i:0,ans:{},rs:(S.rs||0)+1,rz:S.rz||0,free:'',code:null,st:new Date().toISOString()};save();render()}
+
+// ---- 回答コード ----
+function b64(s){return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')}
+function crc(s){var t=crc.t;if(!t){t=crc.t=[];for(var n=0;n<256;n++){var c=n;for(var k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}}
+  var c=0xFFFFFFFF;for(var i=0;i<s.length;i++)c=t[(c^s.charCodeAt(i))&255]^(c>>>8);return((c^0xFFFFFFFF)>>>0).toString(16).padStart(8,'0')}
+function finish(){
+  var a=[],x={};
+  seq.forEach(function(s){
+    if(s.t==='demo')x[s.p.id]=s.xi;
+    if(s.t!=='q'||s.pr)return;
+    var r=S.ans[s.it.id]||{},l=null;
+    // パートB は persons[0] 側＝1 に直す（X が persons[1] のときは反転）。「どちらにも似ていない」は 0
+    if(s.pt==='B'&&r.l!=null)l=r.l===0?0:(s.xi===0?r.l:6-r.l);
+    a.push([s.it.id,s.o,s.pt==='A'?r.c:null,l,r.n,Math.round(Math.min(r.t||0,600)*10),r.e||0,r.p||0]);
+  });
+  var body=b64(JSON.stringify({a:a,x:x,rs:S.rs||0,rz:S.rz||0,f:S.free||'',w:innerWidth,s:S.st,e:new Date().toISOString()}));
+  S.code='PAI6.'+VER+'.'+R+'.'+body+'.'+crc(body);S.i=seq.length;save();render();
+}
+function scrCode(){
+  var ta=h('textarea');ta.readOnly=true;ta.rows=8;ta.value=S.code;ta.onfocus=function(){ta.select()};
+  var msg=h('p','sm');
+  function done(){msg.textContent='コピーしました'}
+  function fail(){ta.focus();ta.select();ta.setSelectionRange(0,ta.value.length);var ok=false;try{ok=document.execCommand('copy')}catch(e){}ok?done():msg.textContent='長押しでコピーしてください'}
+  show([ttl('🏁','全部おわりました！ ご協力ありがとうございました'),
+    h('p',null,'このコードを、リンクを送ってきた人にそのまま送ってください。送ったら、この画面は閉じて大丈夫です。'),ta,
+    btn('コードをコピー','p',function(){if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(ta.value).then(done,fail);else fail()}),
+    btn('LINE で送る','p',function(){msg.textContent='開けないときは、コピーして LINE に貼ってください';location.href='https://line.me/R/share?text='+encodeURIComponent(S.code)}),
+    msg,btn('最初からやり直す','g',restart)],true);
+}
+
+function render(){
+  if(S.code){scrCode();return}
+  var s=seq[S.i];if(!s){finish();return}
+  ({intro:scrIntro,aexp:scrAexp,mid:scrMid,demo:scrDemo,q:scrQ,last:scrLast})[s.t](s);
+}
+// 戻るボタンで離れない（保存ずみなので 1 つ前に戻すだけ）
+history.pushState(null,'');
+addEventListener('popstate',function(){history.pushState(null,'');if(!S.code&&S.i>2&&S.i<seq.length){S.i--;save();render()}});
+addEventListener('hashchange',function(){location.reload()});
+if(had&&!S.code&&S.i>0&&S.i<seq.length)scrResume();else render();
+})();
+</script>
+</body>
+</html>
